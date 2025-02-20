@@ -85,7 +85,7 @@ const logger = function () {
 logger();
 
 // "Стрелочная функция"
-const cal = (a, b) => a + b ;
+const cal = (a, b) => a + b ; // сокращенный вариант стр функции
 console.log(cal(1, 9));
 
 const cali = (a, b) => {
@@ -110,3 +110,62 @@ const nin = 12.2;
 console.log(Math.round(nin)); //округляет число
 console.log (parseInt(nin)); // метод переводит число в другую систему исчисления
 console.log(parseFloat(nin));  // метод берет число или строку и возвращает его в десятичном значении
+
+// " CallBack функции"
+function learnJs (lang, CallBack) {
+	console.log(`Я учу ${lang}`);
+	CallBack();
+}
+function done () {
+	console.log("Я прошел этот урок!");
+}
+learnJs('Java script', done); // пример с имменой функцией
+
+learnJs('Java script', function() { // пример с анонимной функциейб после выполнения она исчезнет
+	console.log('Я прошел этот урок!');
+});
+
+// "ОБЬЕКТЫ"
+const options = {
+	name: 'test',
+	width: 1024,
+	height: 1025,
+	color: {
+		border: 'black',
+		bg: 'red'
+	}
+};
+console.log(options.name); // вызываем ключ name
+// delete options.name; // удаляем ключ,значение из обьекта
+// console.log(options);
+
+for (let key in options) { // перебераем ключи обьекта
+	if (typeof(options[key]) === 'object') {
+		for (let i in options[key]) {
+			console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+		}
+	}else {
+		console.log(`Свойство ${key} имеет значение ${options[key]}`); //Это обращение к ключам основного обьекта и вложенного 
+	}
+		// console.log(`Свойство ${key} имеет значение ${options[key]}`);  // это основного к ключам общего обьекта
+}
+
+const opti = {
+  name: "test",
+  width: 1024,
+  height: 1025,
+  color: {
+    border: "black",
+    bg: "red",
+  },
+  makeTest: function () {  // применение функции в обьекте
+	console.log('Test');
+  }
+};
+opti.makeTest();
+
+const {border, bg} = opti.color;  //деструктуризация обьекта
+console.log(border);
+
+console.log(Object.keys(opti)); // показывает общее нименование клюей обьекта
+console.log(Object.keys(opti).length); // показывет общее количестко ключей обьекта
