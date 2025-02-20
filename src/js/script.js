@@ -1,20 +1,6 @@
 "use strict";
 
 
-const numberOfFilms = prompt('Сколько фильмов вы посмотрели?', '');
-
-const personaMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  private: false
-};
-const a = prompt("Один из последних просмотренных фильмов", ""),
-      b = prompt("На сколько оцените его", "");
- 
-personaMovieDB.movies[a] = b;
-console.log(personaMovieDB); 
 
 // "УСЛОВИЯ"
 const num = 50;
@@ -69,3 +55,58 @@ for(let i = 1; i < 10; i++) {
 	}
 	console.log(i);
 }
+
+// "ФУНКЦИИ"
+function showFirstMessage (text) {
+	console.log(text);
+}
+showFirstMessage("Hello World");
+
+
+function calc(a, b) {
+	return (a + b);
+}
+console.log(calc(4, 3));
+console.log(calc(10, 3));
+console.log(calc(20, 5));
+
+function ret () {
+	let nun = 50;
+	//
+	return nun;
+}
+const anotherNun = ret ();
+console.log(anotherNun);
+
+// "Функциональное вырожение"
+const logger = function () {
+	console.log('Hello');
+};
+logger();
+
+// "Стрелочная функция"
+const cal = (a, b) => a + b ;
+console.log(cal(1, 9));
+
+const cali = (a, b) => {
+	// console.log(cali);
+	return a + b;
+};
+console.log (cali (1,9));
+
+// "Методы и свойства строк "
+const str = 'tesT bob';
+console.log(str.length);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str.indexOf("bob"));
+// "Методы которые могут модифицировать строку"
+console.log(str.slice(5, 8));
+console.log(str.slice(2));
+console.log(str.substring(2, 8)); // тоже самое что и slice
+console.log(str.substr(5, 8));
+// "Методы для работы с числами"
+const nin = 12.2;
+console.log(Math.round(nin)); //округляет число
+console.log (parseInt(nin)); // метод переводит число в другую систему исчисления
+console.log(parseFloat(nin));  // метод берет число или строку и возвращает его в десятичном значении
