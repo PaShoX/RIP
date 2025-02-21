@@ -169,3 +169,19 @@ console.log(border);
 
 console.log(Object.keys(opti)); // показывает общее нименование клюей обьекта
 console.log(Object.keys(opti).length); // показывет общее количестко ключей обьекта
+
+// "МАССИВЫ"
+const frr = [1, 2, 3, 4, 5];
+frr.pop(); //Метод удаляет элемент в конце массива
+frr.push(10); // Метод дообавляет элемент в конец массива
+console.log(frr);
+for (let i = 0; i < frr.length; i++ ) { // Цикл переберающий элементы массива
+	console.log(frr[i]);
+}
+
+for (let val of frr) { // ПЕребераем элементы массива с помощью метода for , of
+	console.log(val);
+} 
+frr.forEach(function(bob, i , frr) { //Перебор массива с момощью метода forEach и calback функции
+		console.log(` ${i}: ${bob} внутри массива ${frr} `);
+});
